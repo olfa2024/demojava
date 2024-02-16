@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pfe2024
+  namespace: namespace-workflow-1708117407371
+spec:
+  type: LoadBalancer
+  selector:
+    app: pfe2024
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
