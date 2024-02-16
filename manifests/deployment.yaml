@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pfe2024
+  labels:
+    app: pfe2024
+  namespace: namespace-workflow-1708117407371
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pfe2024
+  template:
+    metadata:
+      labels:
+        app: pfe2024
+    spec:
+      containers:
+        - name: pfe2024
+          image: acrworkflow1708117407371.azurecr.io/image-workflow-1708117407371:latest
+          ports:
+            - containerPort: 8080
